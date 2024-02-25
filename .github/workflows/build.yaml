@@ -2,6 +2,9 @@ name: Entity Assist Build
 on:
   workflow_dispatch:
   push:
+permissions:
+  contents: read
+  packages: write
 env:
   GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
   GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
