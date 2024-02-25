@@ -1,6 +1,11 @@
 name: Entity Assist Build
 on:
   workflow_dispatch:
+    inputs:
+      centralRelease:
+        type: boolean
+        description: Run a release to maven central
+        default: false
   push:
 permissions:
   contents: read
@@ -14,7 +19,7 @@ jobs:
     with:
       baseDir: 'core/'
       name: 'Entity Assist Core'
-      publishToCentral: true
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
