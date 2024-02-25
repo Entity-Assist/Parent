@@ -10,7 +10,7 @@ env:
   GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 jobs:
   EntityAssistCore:
-    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    uses: GuicedEE/Workflows/.github/workflows/bom.yml@master
     with:
       baseDir: 'core/'
       name: 'Entity Assist Core'
